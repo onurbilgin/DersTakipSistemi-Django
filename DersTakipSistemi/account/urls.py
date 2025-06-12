@@ -7,8 +7,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('login', views.login_request, name="login"),
     path('register', views.register_request, name="register"),
-    path('activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/', activate,
-         name='activate'),
+    path('activate/<uidb64>/<token>/', activate, name='activate'),
     path('change_password', views.change_password, name="change_password"),
     path('sifre', views.sifre, name="sifre"),
     path('logout', views.logout_request, name="logout"),
